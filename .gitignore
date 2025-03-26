@@ -1,0 +1,6 @@
+Dependencies/
+.vs/
+bin/
+obj/
+migrations/
+logs/
