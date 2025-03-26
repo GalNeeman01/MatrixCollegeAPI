@@ -1,0 +1,49 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.34916.146
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MatrixCollege.API", "MatrixCollege.API\MatrixCollege.API.csproj", "{0746EE53-3A89-419F-8851-58D67872852B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MatrixCollege.Application", "MatrixCollege.Application\MatrixCollege.Application.csproj", "{D8A4689A-580F-413A-8B04-55B0B5D71B03}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MatrixCollege.Domain", "MatrixCollege.Domain\MatrixCollege.Domain.csproj", "{05C11185-D87A-4656-9218-4A72AC50FEC0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MatrixCollege.Infrastructure", "MatrixCollege.Infrastructure\MatrixCollege.Infrastructure.csproj", "{F1668F03-B9A3-4548-AA4A-C089F6E3D181}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MatrixCollege.Shared", "MatrixCollege.Shared\MatrixCollege.Shared.csproj", "{97940D09-5890-4AF6-9A26-854BCA92153E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0746EE53-3A89-419F-8851-58D67872852B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0746EE53-3A89-419F-8851-58D67872852B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0746EE53-3A89-419F-8851-58D67872852B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0746EE53-3A89-419F-8851-58D67872852B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D8A4689A-580F-413A-8B04-55B0B5D71B03}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D8A4689A-580F-413A-8B04-55B0B5D71B03}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D8A4689A-580F-413A-8B04-55B0B5D71B03}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D8A4689A-580F-413A-8B04-55B0B5D71B03}.Release|Any CPU.Build.0 = Release|Any CPU
+		{05C11185-D87A-4656-9218-4A72AC50FEC0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{05C11185-D87A-4656-9218-4A72AC50FEC0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{05C11185-D87A-4656-9218-4A72AC50FEC0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{05C11185-D87A-4656-9218-4A72AC50FEC0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F1668F03-B9A3-4548-AA4A-C089F6E3D181}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F1668F03-B9A3-4548-AA4A-C089F6E3D181}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F1668F03-B9A3-4548-AA4A-C089F6E3D181}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F1668F03-B9A3-4548-AA4A-C089F6E3D181}.Release|Any CPU.Build.0 = Release|Any CPU
+		{97940D09-5890-4AF6-9A26-854BCA92153E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{97940D09-5890-4AF6-9A26-854BCA92153E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{97940D09-5890-4AF6-9A26-854BCA92153E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{97940D09-5890-4AF6-9A26-854BCA92153E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {02171DEB-538A-4960-81D5-B9C9D44AEC94}
+	EndGlobalSection
+EndGlobal
