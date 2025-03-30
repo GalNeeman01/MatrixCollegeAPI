@@ -2,10 +2,10 @@
 
 public class ValidationService : IValidationService
 {
-    private ICourseDao _courseDao;
-    private ILessonDao _lessonDao;
-    private IUserDao _userDao;
-    private IEnrollmentDao _enrollmentDao;
+    private readonly ICourseDao _courseDao;
+    private readonly ILessonDao _lessonDao;
+    private readonly IUserDao _userDao;
+    private readonly IEnrollmentDao _enrollmentDao;
 
     public ValidationService(ICourseDao courseDao, ILessonDao lessonDao, 
                             IUserDao userDao, IEnrollmentDao enrollmentDao)

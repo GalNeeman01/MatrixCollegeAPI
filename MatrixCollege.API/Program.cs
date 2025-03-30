@@ -29,7 +29,7 @@ public class Program
         builder.Services.AddDaoServices();
 
         // Add Fluent DI validators
-        builder.Services.AddValidatorsFromAssemblyContaining<Program>();
+        builder.Services.AddValidatorsFromAssemblyContaining<UserValidator>();
 
         // IOptions DIs
         builder.Services.Configure<LogSettings>(

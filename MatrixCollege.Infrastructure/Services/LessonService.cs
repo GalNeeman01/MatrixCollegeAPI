@@ -6,11 +6,11 @@ namespace Matrix;
 public class LessonService : ILessonService
 {
     // DI's
-    private MatrixCollegeContext _db;
-    private IProgressService _progressService;
-    private IValidationService _validationService;
-    private ILessonDao _lessonDao;
-    private IMapper _mapper;
+    private readonly MatrixCollegeContext _db;
+    private readonly IProgressService _progressService;
+    private readonly IValidationService _validationService;
+    private readonly ILessonDao _lessonDao;
+    private readonly IMapper _mapper;
 
     // Constructor
     public LessonService(MatrixCollegeContext db, IMapper mapper, IProgressService progressService,
@@ -118,24 +118,12 @@ public class LessonService : ILessonService
 
         if (lessons.Count == 0)
             return false;
+        // Remove related progresses
+        await _progressService.RemoveProgressByLessonsAsync(lessons);
 
-        // Remove with cascade and transaction
-        using IDbContextTransaction transaction = _db.Database.BeginTransaction();
-        try
-        {
-            // Remove related progresses
-            await _progressService.RemoveProgressByLessonsAsync(lessons);
+        await _lessonDao.RemoveLessonsAsync(lessons);
 
-            await _lessonDao.RemoveLessonsAsync(lessons);
-
-            await transaction.CommitAsync();
-            return true;
-        }
-        catch (Exception e)
-        {
-            await transaction.RollbackAsync();
-            throw e;
-        }
+        return true;
     }
 
     public async Task<List<LessonDto>?> UpdateLessonsAsync(List<LessonDto> lessonDtos)

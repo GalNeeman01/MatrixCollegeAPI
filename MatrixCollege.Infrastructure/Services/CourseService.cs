@@ -6,12 +6,12 @@ namespace Matrix;
 public class CourseService : ICourseService
 {
     // DI's
-    private MatrixCollegeContext _db;
-    private ILessonService _lessonService;
-    private IEnrollmentService _enrollmentService;
-    private IValidationService _validationService;
-    private IMapper _mapper;
-    private ICourseDao _courseDao;
+    private readonly MatrixCollegeContext _db;
+    private readonly ILessonService _lessonService;
+    private readonly IEnrollmentService _enrollmentService;
+    private readonly IValidationService _validationService;
+    private readonly IMapper _mapper;
+    private readonly ICourseDao _courseDao;
 
     // Constructor
     public CourseService(MatrixCollegeContext db, IMapper mapper, ILessonService lessonService, 
@@ -86,7 +86,10 @@ public class CourseService : ICourseService
         {
             // Return false if the course does not exist
             if (!(await _validationService.IsCourseExistsAsync(courseId)))
+            {
+                await transaction.RollbackAsync();
                 return false;
+            }
 
             // Remove related lessons
             await _lessonService.RemoveLessonsByCourseId(courseId);

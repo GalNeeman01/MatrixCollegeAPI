@@ -13,9 +13,9 @@ public enum RolesEnum
 public class UserService : IUserService
 {
     // DI's
-    private ITokenService _tokenService;
-    private IMapper _mapper;
-    private IUserDao _userDao;
+    private readonly ITokenService _tokenService;
+    private readonly IMapper _mapper;
+    private readonly IUserDao _userDao;
 
     // Constructor
     public UserService (IMapper mapper, ITokenService tokenService,

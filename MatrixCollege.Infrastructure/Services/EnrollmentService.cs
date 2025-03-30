@@ -8,12 +8,12 @@ namespace Matrix;
 public class EnrollmentService : IEnrollmentService
 {
     // DI's
-    private MatrixCollegeContext _db;
-    private IMapper _mapper;
-    private IEnrollmentDao _enrollmentDao;
-    private IProgressService _progressService;
-    private ILessonService _lessonService;
-    private IValidationService _validationService;
+    private readonly MatrixCollegeContext _db;
+    private readonly IMapper _mapper;
+    private readonly IEnrollmentDao _enrollmentDao;
+    private readonly IProgressService _progressService;
+    private readonly ILessonService _lessonService;
+    private readonly IValidationService _validationService;
 
     // Constructor
     public EnrollmentService(MatrixCollegeContext db, IMapper mapper, IEnrollmentDao enrollmentDao,
@@ -109,21 +109,9 @@ public class EnrollmentService : IEnrollmentService
 
     public async Task RemoveEnrollmentsByCourseAsync(Guid courseId)
     {
-        await using IDbContextTransaction transaction = _db.Database.BeginTransaction();
+        List<Enrollment> enrollments = await _enrollmentDao.GetEnrollmentsByCourseId(courseId);
 
-        try
-        {
-            List<Enrollment> enrollments = await _enrollmentDao.GetEnrollmentsByCourseId(courseId);
-
-            foreach (Enrollment enrollment in enrollments)
-                await RemoveEnrollmentAsync(enrollment.Id);
-
-            await transaction.CommitAsync();
-        }
-        catch (Exception e)
-        {
-            await transaction.RollbackAsync();
-            throw e;
-        }
+        foreach (Enrollment enrollment in enrollments)
+            await RemoveEnrollmentAsync(enrollment.Id);
     }
 }

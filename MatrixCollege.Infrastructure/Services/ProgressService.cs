@@ -5,9 +5,9 @@ namespace Matrix;
 public class ProgressService : IProgressService
 {
     // DI's
-    private IMapper _mapper;
-    private IProgressDao _progressDao;
-    private IValidationService _validationService;
+    private readonly IMapper _mapper;
+    private readonly IProgressDao _progressDao;
+    private readonly IValidationService _validationService;
 
     // Constructor
     public ProgressService(IMapper mapper, IProgressDao progressDao, IValidationService validationService)
